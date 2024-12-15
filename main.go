@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	pretty "github.com/Masum-Osman/prettyp/src"
 )
 
 func main() {
@@ -39,7 +41,7 @@ func main() {
 		},
 	}
 
-	err := PrettyPrint(project)
+	err := pretty.PrettyPrint(project)
 	if err != nil {
 		fmt.Println("Error:", err)
 	}

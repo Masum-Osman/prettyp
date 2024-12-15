@@ -3,6 +3,7 @@ package main
 import (
 	"testing"
 
+	pretty "github.com/Masum-Osman/prettyp/src"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -41,6 +42,6 @@ func TestPretty(t *testing.T) {
 		},
 	}
 
-	err := PrettyPrint(project)
+	err := pretty.PrettyPrint(project)
 	assert.NoError(t, err, "PrettyPrint should not return an error")
 }
