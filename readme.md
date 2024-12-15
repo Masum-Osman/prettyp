@@ -1,4 +1,3 @@
-```markdown
 # PrettyPrint JSON Utility
 
 This project provides a utility for pretty-printing JSON with color-coded output. The utility is designed to print keys in blue and values in red, making it easier to read and debug JSON data.
