@@ -8,10 +8,10 @@ This project provides a utility for pretty-printing JSON with color-coded output
 prettyp/
 ├── go.mod
 ├── go.sum
-├── jsonutil/
-│   ├── prettyp.go
-│   └── prettyp_test.go
-└── main.go
+├── prettyp.go
+├── prettyp_test.go
+├── main.go
+└── readme.md
 ```
 
 ## Installation
@@ -31,12 +31,17 @@ go mod tidy
 
 ## Usage
 
+### Install 
+```
+go get github.com/Masum-Osman/prettyp/prettyp
+```
+
 ### Import the Package
 
 To use the PrettyPrint function in your Go project, import the package:
 
 ```go
-import "github.com/Masum-Osman/prettyp/prettyp"
+import "github.com/Masum-Osman/prettyp"
 ```
 
 ### Example
@@ -47,7 +52,7 @@ Here’s an example of how to use the PrettyPrint function:
 package main
 
 import (
-    "github.com/Masum-Osman/prettyp/prettyp"
+    "github.com/Masum-Osman/prettyp"
     "fmt"
 )
 

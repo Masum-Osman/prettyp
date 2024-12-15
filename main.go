@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/Masum-Osman/prettyp/jsonutil"
 )
 
 func main() {
@@ -41,7 +39,7 @@ func main() {
 		},
 	}
 
-	err := jsonutil.PrettyPrint(project)
+	err := PrettyPrint(project)
 	if err != nil {
 		fmt.Println("Error:", err)
 	}
