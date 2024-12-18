@@ -10,7 +10,6 @@ prettyp/
 ├── go.sum
 ├── prettyp.go
 ├── prettyp_test.go
-├── main.go
 └── readme.md
 ```
 

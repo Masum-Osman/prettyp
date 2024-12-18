@@ -80,7 +80,3 @@ func colorString(str string, isKey bool) string {
 		return "\x1b[33m" + str + "\x1b[0m"
 	}
 }
-
-func Te() {
-	fmt.Println("something")
-}
