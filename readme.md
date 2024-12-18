@@ -13,26 +13,12 @@ prettyp/
 └── readme.md
 ```
 
-## Installation
-
-1. Clone the repository:
-
-```sh
-git clone https://github.com/Masum-Osman/prettyp.git
-cd prettyp
-```
-
-2. Initialize the module (if not already done):
-
-```sh
-go mod tidy
-```
 
 ## Usage
 
 ### Install 
 ```
-go get github.com/Masum-Osman/prettyp/prettyp
+go get github.com/Masum-Osman/prettyp
 ```
 
 ### Import the Package
