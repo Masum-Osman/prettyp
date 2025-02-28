@@ -2,17 +2,6 @@
 
 This project provides a utility for pretty-printing JSON with color-coded output. The utility is designed to print keys in blue and values in red, making it easier to read and debug JSON data.
 
-## Project Structure
-
-```
-prettyp/
-├── go.mod
-├── go.sum
-├── prettyp.go
-├── prettyp_test.go
-└── readme.md
-```
-
 
 ## Usage
 
@@ -37,46 +26,37 @@ Here’s an example of how to use the PrettyPrint function:
 package main
 
 import (
-    "github.com/Masum-Osman/prettyp"
+    p "github.com/Masum-Osman/prettyp"
     "fmt"
 )
 
 func main() {
-    project := struct {
-        Id           int64                  `json:"project_id"`
-        Title        string                 `json:"title"`
-        Name         string                 `json:"name"`
-        Budget       float64                `json:"budget"`
-        Active       bool                   `json:"active"`
-        Tags         []string               `json:"tags"`
-        Milestones   []int                  `json:"milestones"`
-        Metadata     map[string]interface{} `json:"metadata"`
-        NestedStruct struct {
-            Description string `json:"description"`
-            Completed   bool   `json:"completed"`
-        } `json:"nested_struct"`
-    }{
-        Id:         123,
-        Title:      "Test Project",
-        Name:       "Test Name",
-        Budget:     1000000.50,
-        Active:     true,
-        Tags:       []string{"Go", "JSON", "PrettyPrint"},
-        Milestones: []int{1, 2, 3, 4},
-        Metadata: map[string]interface{}{
-            "created_by": "User123",
-            "priority":   "High",
-        },
-        NestedStruct: struct {
-            Description string `json:"description"`
-            Completed   bool   `json:"completed"`
-        }{
-            Description: "Nested Struct Description",
-            Completed:   false,
-        },
-    }
+    cat := struct {
+		Id            string    `json:"id"`
+		Name          string    `json:"name"`
+		Breed         string    `json:"breed"`
+		Age           int       `json:"age"`
+		IsIndoor      bool      `json:"is_indoor"`
+		WeightKg      float64   `json:"weight_kg"`
+		FavoriteFoods []string  `json:"favorite_foods"`
+		AdoptedAt     time.Time `json:"adopted_at"`
+		Owner         Owner     `json:"owner"`
+	}{
+		Id:            "673dcdb47484940c3f9fd08c",
+		Name:          "Whiskers",
+		Breed:         "British Shorthair",
+		Age:           3,
+		IsIndoor:      true,
+		WeightKg:      4.2,
+		FavoriteFoods: []string{"Tuna", "Salmon", "Chicken"},
+		AdoptedAt:     time.Now(),
+		Owner: Owner{
+			Name:  "Owner",
+			Email: "owner@example.com",
+		},
+	}
 
-    err := prettyp.PrettyPrint(project)
+    err := p.PrettyPrint(project)
     if err != nil {
         fmt.Println("Error:", err)
     }
@@ -91,12 +71,14 @@ To run the example, use the following command:
 go run main.go
 ```
 
+![screenshot](doc/screenshot.png)
+
 ## Testing
 
 To run the tests for the PrettyPrint function, use the following command:
 
 ```sh
-go test ./prettyp
+go test
 ```
 
 <!-- ## License

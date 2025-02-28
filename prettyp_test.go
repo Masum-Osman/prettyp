@@ -91,3 +91,38 @@ func TestPrettyPrintWithLocation(t *testing.T) {
 	err := PrettyPrint(location)
 	assert.NoError(t, err, "PrettyPrint should not return an error")
 }
+
+type Owner struct {
+	Name  string `json:"name"`
+	Email string `json:"email"`
+}
+
+func TestPrettyPrintWithCat(t *testing.T) {
+	cat := struct {
+		Id            string    `json:"id"`
+		Name          string    `json:"name"`
+		Breed         string    `json:"breed"`
+		Age           int       `json:"age"`
+		IsIndoor      bool      `json:"is_indoor"`
+		WeightKg      float64   `json:"weight_kg"`
+		FavoriteFoods []string  `json:"favorite_foods"`
+		AdoptedAt     time.Time `json:"adopted_at"`
+		Owner         Owner     `json:"owner"`
+	}{
+		Id:            "673dcdb47484940c3f9fd08c",
+		Name:          "Whiskers",
+		Breed:         "British Shorthair",
+		Age:           3,
+		IsIndoor:      true,
+		WeightKg:      4.2,
+		FavoriteFoods: []string{"Tuna", "Salmon", "Chicken"},
+		AdoptedAt:     time.Now(),
+		Owner: Owner{
+			Name:  "Owner",
+			Email: "owner@example.com",
+		},
+	}
+
+	err := PrettyPrint(cat)
+	assert.NoError(t, err, "PrettyPrint should not return an error")
+}
