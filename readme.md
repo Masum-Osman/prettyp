@@ -71,7 +71,7 @@ To run the example, use the following command:
 go run main.go
 ```
 
-![screenshot](doc/screenshot.png)
+![screenshot](doc/Screenshot.png)
 
 ## Testing
 
